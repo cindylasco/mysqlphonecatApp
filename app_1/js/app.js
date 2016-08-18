@@ -15,10 +15,12 @@ phonecatApp.config(['$routeProvider',
         templateUrl: 'partials/phone-board.html',
         controller: 'PhoneBoardCtrl'
       }).
-	   when('/updatePhone/:phoneId', {
-        templateUrl: 'partials/updatePhone.html',
-        controller: 'UpdatePhoneCtrl'
-      }).
+	  /*
+	   when('/phoneboard/:id', {
+	   templateUrl: 'partials/updatePhone.html', 
+	   controller: 'UpdatePhoneCtrl'
+	  }).
+	  */
       otherwise({
         redirectTo: '/phones'
       });

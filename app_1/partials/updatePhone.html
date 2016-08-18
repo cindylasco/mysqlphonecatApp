@@ -1,0 +1,182 @@
+<h1>Update Phone Detail</h1>
+<div class="row" ng-controller='UpdatePhoneCtrl'>
+<div class="col-md-6">
+    <form novalidate ng-repeat="phone in PhoneDetail" name="AddNewForm" id="add-new-form" method="post" action="">
+      <input type="hidden" ng-model="phone.phoneId" value="{{phone.id}}" />
+	  
+				  <div class="form-group">
+					<label>Age</label>
+					<input class="form-control" type="text" ng-model="phone.age" value="{{phone.age}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Carrier</label>
+					<input class="form-control" type="text" ng-model="phone.carrier" value="{{phone.carrierme}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>ID</label>
+					<input class="form-control" type="text" ng-model="phone.id" value="{{phone.id}}" required />
+				  </div>
+				  <div class="form-group">
+					<label >Main Image Url</label>
+					<input class="form-control" type="text" ng-model="phone.imageUrl" value="{{phone.imageUrl}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Name</label>
+					<input class="form-control" type="text" ng-model="phone.name" value="{{phone.name}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Snippet</label>
+					<input class="form-control" type="text" ng-model="phone.snippet" value="{{phone.snippet}}" required />
+				  </div>
+				  <div class="form-group">
+					<label >Availability</label>
+					<input class="form-control" type="text" ng-model="phone.availability" value="{{phone.availability}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Description</label>
+					<input class="form-control" type="text" ng-model="phone.description" value="{{phone.description}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Additional Features</label>
+					<input class="form-control" type="text" ng-model="phone.additionalFeatures" value="{{phone.additionalFeatures}}" required />
+				  </div>
+				  
+			<h2>Battery Details</h2>
+				
+				  <div class="form-group">
+					<label >Type</label>
+					<input class="form-control" type="text" ng-model="phone.type" value="{{phone.typel}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Standby Time</label>
+					<input class="form-control" type="text" ng-model="phone.standbyTime" value="{{phone.standbyTime}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Talk Time</label>
+					<input class="form-control" type="text" ng-model="phone.talkTime" value="{{phone.talkTime}}" required />
+				  </div>	
+				  
+			<h2>Android Details</h2>
+				
+				  <div class="form-group">
+					<label >OS</label>
+					<input class="form-control" type="text" ng-model="phone.os" value="{{phone.os}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>UI</label>
+					<input class="form-control" type="text" ng-model="phone.ui" value="{{phone.ui}}" required />
+				  </div>
+				  
+			<h2>Camera Details</h2>
+				
+				  <div class="form-group">
+					<label >Features</label>
+					<input class="form-control" type="text" ng-model="phone.features" value="{{phone.features}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Primary</label>
+					<input class="form-control" type="text" ng-model="phone.primary" value="{{phone.primary}}" required />
+				  </div>
+				  
+			<h2>Connectivity Details</h2>
+				
+				  <div class="form-group">
+					<label >Bluetooth</label>
+					<input class="form-control" type="text" ng-model="phone.bluetooth" value="{{phone.bluetooth}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Cell</label>
+					<input class="form-control" type="text" ng-model="phone.cell" value="{{phone.cell}}" required />
+				  </div>
+				  <div class="form-group">
+					<label >GPS</label>
+					<input class="form-control" type="text" ng-model="phone.gps" value="{{phone.gps}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Infrared</label>
+					<input class="form-control" type="text" ng-model="phone.infrared" value="{{phone.infrared}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Wifi</label>
+					<input class="form-control" type="text" ng-model="phone.wifi" value="{{phone.wifi}}" required />
+				  </div>
+				  
+			<h2>Display Details</h2>
+				
+				  <div class="form-group">
+					<label >Screen Resolution</label>
+					<input class="form-control" type="text" ng-model="phone.screenResolution" value="{{phone.screenResolution}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Screen Size</label>
+					<input class="form-control" type="text" ng-model="phone.screenSize" value="{{phone.screenSize}}" required />
+				  </div>
+				  <div class="form-group">
+					<label >Touch Screen</label>
+					<input class="form-control" type="text" ng-model="phone.touchScreen" value="{{phone.touchScreen}}" required />
+				  </div>
+				  
+			<h2>Hardware Details</h2>
+				
+				  <div class="form-group">
+					<label >Accelerometer</label>
+					<input class="form-control" type="text" ng-model="phone.accelerometer" value="{{phone.accelerometer}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Audio Jack</label>
+					<input class="form-control" type="text" ng-model="phone.audioJack" value="{{phone.audioJack}}" required />
+				  </div>
+				  <div class="form-group">
+					<label >CPU</label>
+					<input class="form-control" type="text" ng-model="phone.cpu" value="{{phone.cpu}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>FM Radio</label>
+					<input class="form-control" type="text" ng-model="phone.fmRadio" value="{{phone.fmRadio}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Physical Keyboard</label>
+					<input class="form-control" type="text" ng-model="phone.physicalKeyboard" value="{{phone.physicalKeyboard}}" required />
+				  </div>
+				   <div class="form-group">
+					<label>USB</label>
+					<input class="form-control" type="text" ng-model="phone.usb" value="{{phone.usb}}" required />
+				  </div>
+				  
+			<h2>Size & Weight Details</h2>
+				
+				  <div class="form-group">
+					<label >Dimensions</label>
+					<input class="form-control" type="text" ng-model="phone.dimensions" value="{{phone.dimensions}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Weight</label>
+					<input class="form-control" type="text" ng-model="phone.weight" value="{{phone.weight}}" required />
+				  </div>
+				  
+			<h2>Storage Details</h2>
+				
+				  <div class="form-group">
+					<label >RAM</label>
+					<input class="form-control" type="text" ng-model="phone.ram" value="{{phone.ram}}" required />
+				  </div>
+				  <div class="form-group">
+					<label>Flash</label>
+					<input class="form-control" type="text" ng-model="phone.flash" value="{{phone.flash}}" required />
+				  </div>
+				  
+			<h2>Image URLs</h2>
+				
+				  <div class="form-group">
+					<label >RAM</label>
+					<input class="form-control" type="text" ng-model="phone.images" value="{{phone.images}}" required />
+				  </div>
+	  
+	  
+      <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(phone)" id="add-new-btn" ng-click="Update_Phone(phone)">Update
+      <span class="glyphicon glyphicon-floppy-disk"></span></button>
+      <button class="btn btn-danger" ng-click="Delete_Phone(phone)">Delete <span class="glyphicon glyphicon-trash"></span></button>
+      <a href="#/phoneboard" class="btn">Cancel</a>
+    </form>
+</div>
+</div>

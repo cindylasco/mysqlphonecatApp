@@ -1,0 +1,307 @@
+<div class="container">
+	<h1>Update {{phone.name}} Information</h1>
+
+		<form class="form-horizontal" action="/phonesList" method="POST" role="form" name="updatePhoneDetail"   >
+				
+		<div class="panel panel-primary">
+			  <div class="panel-heading">Phone Details</div>
+				  <div class="panel-body">
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Age</label>
+							<input class="form-control" type="text" ng-model="phone.age"/>
+						</div>
+					  </div>
+					  
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Carrier</label>
+							<input class="form-control" type="text" ng-model="phone.carrier" />
+						 </div>
+					  </div>
+					  
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>ID</label>
+							<input class="form-control" type="text" ng-model="phone.id" />
+						</div>
+					  </div>
+					  
+					  <div class="form-group">
+						<div class="col-sm-12">
+						<label>Main Image Url</label>
+						<input class="form-control" type="text" ng-model="phone.imageUrl"/>
+					  </div>
+					  </div>
+					  
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Name</label>
+							<input class="form-control" type="text" ng-model="phone.name"/>
+					  </div>
+					  </div>
+					  
+					   <div class="form-group">
+						<div class="col-sm-12">
+							<label>Snippet</label>
+							<input class="form-control" type="text" ng-model="phone.snippet"/>
+					  </div>
+					  </div>
+					  
+					  <div class="form-group">
+						<div class="col-sm-12">
+						<label>Availability</label>
+						<input class="form-control" type="text" ng-model="phone.availability"/>
+					  </div>
+					  </div>
+					  
+					  <div class="form-group">
+						<div class="col-sm-12">
+						<label>Description</label>
+						<input class="form-control" type="text" ng-model="phone.description"/>
+					  </div>
+					  </div>
+					  
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Additional Features</label>
+							<input class="form-control" type="text" ng-model="phone.additionalFeatures" />
+					  </div>
+					  </div>
+					  
+				  </div>
+				</div>				
+				  
+			<div class="panel panel-primary">
+			  <div class="panel-heading">Battery Details</div>
+				  <div class="panel-body">
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Type</label>
+							<input class="form-control" type="text" ng-model="phone.type"/>
+					  </div>
+					  </div>
+					  
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Standby Time</label>
+							<input class="form-control" type="text" ng-model="phone.standbyTime"/>
+					  </div>
+					  </div>
+					  
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Talk Time</label>
+							<input class="form-control" type="text" ng-model="phone.talkTime"/>
+					  </div>
+					  </div>
+				</div>
+			</div>
+				  
+			<div class="panel panel-primary">
+			  <div class="panel-heading">Android Details</div>
+				  <div class="panel-body">
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>OS</label>
+							<input class="form-control" type="text" ng-model="phone.os"/>
+					  </div>
+					  </div>
+					  
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>UI</label>
+							<input class="form-control" type="text" ng-model="phone.ui"/>
+					  </div>
+					  </div>
+					  
+					</div>
+			</div>
+				  
+			<div class="panel panel-primary">
+			  <div class="panel-heading">Camera Details</div>
+				  <div class="panel-body">
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Features</label>
+							<input class="form-control" type="text" ng-model="phone.features"/>
+					  </div>
+					  </div>
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Primary</label>
+							<input class="form-control" type="text" ng-model="phone.primary"/>
+					  </div>
+					  </div>
+					  
+					</div>
+			</div>
+				  
+			<div class="panel panel-primary">
+			  <div class="panel-heading">Connectivity Details</div>
+				  <div class="panel-body">
+				
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Bluetooth</label>
+							<input class="form-control" type="text" ng-model="phone.bluetooth"/>
+					  </div>
+					  </div>
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Cell</label>
+							<input class="form-control" type="text" ng-model="phone.cell"/>
+					  </div>
+					  </div>
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>GPS</label>
+							<input class="form-control" type="text" ng-model="phone.gps"/>
+					  </div>
+					  </div>
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Infrared</label>
+							<input class="form-control" type="text" ng-model="phone.infrared" />
+					  </div>
+					  </div>
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Wifi</label>
+							<input class="form-control" type="text" ng-model="phone.wifi"/>
+					  </div>
+					  </div>
+					  
+					</div>
+			</div>
+
+			<div class="panel panel-primary">
+			  <div class="panel-heading">Display Details</div>
+				  <div class="panel-body">
+				
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Screen Resolution</label>
+							<input class="form-control" type="text" ng-model="phone.screenResolution"/>
+					  </div>
+					  </div>
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Screen Size</label>
+							<input class="form-control" type="text" ng-model="phone.screenSize"/>
+					  </div>
+					  </div>
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Touch Screen</label>
+							<input class="form-control" type="text" ng-model="phone.touchScreen"/>
+					  </div>
+					</div>
+					  
+					</div>
+			</div>					  
+			
+			<div class="panel panel-primary">
+			  <div class="panel-heading">Hardware Details</div>
+				  <div class="panel-body">
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Accelerometer</label>
+							<input class="form-control" type="text" ng-model="phone.accelerometer"/>
+						</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-sm-12">
+								<label>Audio Jack</label>
+								<input class="form-control" type="text" ng-model="phone.audioJack"/>
+						</div>
+						</div>
+						  <div class="form-group">
+								<div class="col-sm-12">
+									<label>CPU</label>
+									<input class="form-control" type="text" ng-model="phone.cpu"/>
+						  </div>
+						  </div>
+				  
+						  <div class="form-group">
+								<div class="col-sm-12">
+									<label>FM Radio</label>
+									<input class="form-control" type="text" ng-model="phone.fmRadio" />
+						  </div>
+						  </div>
+				  
+						  <div class="form-group">
+								<div class="col-sm-12">
+									<label>Physical Keyboard</label>
+									<input class="form-control" type="text" ng-model="phone.physicalKeyboard"/>
+						  </div>
+						  </div>
+				  
+						   <div class="form-group">
+								<div class="col-sm-12">
+									<label>USB</label>
+									<input class="form-control" type="text" ng-model="phone.usb"/>
+						  </div>
+						  </div>
+			</div>
+		</div>
+			
+			<div class="panel panel-primary">
+			  <div class="panel-heading">Size and Weight Details</div>
+				  <div class="panel-body">
+					  <div class="form-group">
+						<div class="col-sm-12">				
+							<label>Dimensions</label>
+							<input class="form-control" type="text" ng-model="phone.dimensions"/>
+						</div>
+						</div>
+						
+					  <div class="form-group">
+						<div class="col-sm-12">	
+							<label>Weight</label>
+							<input class="form-control" type="text" ng-model="phone.weight"/>
+						</div>
+						</div>
+			</div>
+		</div>
+									  
+			<div class="panel panel-primary">
+			  <div class="panel-heading">Storage Details</div>
+				  <div class="panel-body">
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>RAM</label>
+							<input class="form-control" type="text" ng-model="phone.ram"/>
+						</div>
+						</div>
+				  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Flash</label>
+							<input class="form-control" type="text" ng-model="phone.flash"/>
+				  </div>
+				  </div>
+			</div>
+		</div>
+
+			<div class="panel panel-primary">
+			  <div class="panel-heading">Images Details</div>
+				  <div class="panel-body">
+					  <div class="form-group">
+						<div class="col-sm-12">
+							<label>Image URLs</label>
+							<input class="form-control" type="text" ng-model="phone.images"/>
+						</div>
+						</div>
+				</div>
+		</div>
+						
+
+					  <div class="form-group"> 
+						<div class="col-sm-offset-2 col-sm-10">
+						  <input ng-click="postPhoneUpdate()" name="btnSave" value="Save" type="submit" class="btn btn-primary"/> <a class='btn btn-primary' href='#/phoneboard'>Cancel</a>
+						</div>
+					  </div>
+
+	</form>
+</div>
