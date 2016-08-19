@@ -5,6 +5,11 @@ var app             =         express();
 /*
   * Configure MySQL parameters.
 */
+
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 var connection      =         mysql.createConnection({
         host        :         "localhost",
         user        :         "root",
@@ -163,248 +168,270 @@ app.get('/updatePhone/:id', function(req, res){
   });
 });
 
-//UPDATE RECORD IN DATABASE TABLES
+app.post('/postUpdate', function(req, res){
 
-app.post('/update',function(req,res){
 
-		//phones table
-		var v_phoneId= req.body.phoneId;
-		var v_carrier= req.body.carrier;
-		var v_id= req.body.id;
-		var v_imageUrl= req.body.imageUrl;
-		var v_name= req.body.name;
-		var v_snippet= req.body.snippet;
-		var v_additionalFeatures= req.body.additionalFeatures;
-		var v_description= req.body.description;
-
-		//availability table
-		var v_availability= req.body.availability;
-
-		//battery table
-		var v_type= req.body.type;
-		var v_standbyTime= req.body.standbyTime;
-		var v_talkTime= req.body.talkTime;
-
-		//android table
-		var v_os= req.body.os;
-		var v_ui= req.body.ui;
-
-		//camera table
-		var v_primary= req.body.primary;
-		var v_features= req.body.features;
-
-		//connectivity table
-		var v_bluetooth= req.body.bluetooth;
-		var v_cell= req.body.cell;
-		var v_gps= req.body.gps;
-		var v_infrared= req.body.infrared;
-		var v_wifi= req.body.wifi;
-
-		//display table
-		var v_screenResolution= req.body.screenResolution;
-		var v_screenSize= req.body.screenSize;
-		var v_touchScreen= req.body.touchScreen;
-
-		//hardware table
-		var v_accelerometer= req.body.accelerometer;
-		var v_audioJack= req.body.audioJack;
-		var v_cpu= req.body.cpu;
-		var v_fmRadio= req.body.fmRadio;
-		var v_physicalKeyboard= req.body.physicalKeyboard;
-		var v_usb= req.body.usb;
-
-		//sizeAndWeight table
-		var v_dimensions= req.body.dimensions;
-		var v_weight= req.body.weight;
-
-		//storage table
-		var v_ram= req.body.ram;
-		var v_flash= req.body.flash;
-
-		//images table
-		var v_images=req.body.images;
-
-			// query for updating phones table
-			connection.query("UPDATE into phones SET age='"+v_age+
-					"', carrier ='"+v_carrier+
-					"', id ='"+v_id+
-					"', imageUrl ='"+v_imageUrl+
-					"', name ='"+v_name+
-					"', snippet ='" +v_snippet+
-					"', additionalFeatures ='" +v_additionalFeatures+
-					"', description ='" +v_description+
-					"' WHERE phoneId= " +v_phoneId ,function(err,rows){
-					
-					if(err)
-					 {
-						 console.log("Problem with MySQL"+err);
-						 }
-					else 
-						 {
-						  console.log("Phones Table Updated!");
-						}           
-			  });
+//UPDATING PHONES TABLE
+  var phoneId = req.body.phoneId;
+  var age = req.body.age;
+  var carrier = req.body.carrier;
+  var id = req.body.id;
+  var imageUrl = req.body.imageUrl;
+  var name = req.body.name;
+  var snippet = req.body.snippet;
+  var description = req.body.description;
+  var addFeatures = req.body.additionalFeatures;
   
-				// query for updating androids table
-			connection.query("UPDATE into phones SET os='"+v_os+
-					"', ui ='"+v_ui+
-					"', id ='"+v_id+
-					"' WHERE phoneId= " +v_phoneId ,function(err,rows){
-					
-					if(err)
-					 {
-						 console.log("Problem with MySQL"+err);
-						 }
-					else 
-						 {
-						  console.log("Android Table Updated!");
-						}           
-			  });
-			  
-			  // query for updating availability table
-			  connection.query("UPDATE into phones SET availability='"+v_availability+
-					"' WHERE phoneId= " +v_phoneId ,function(err,rows){
-					
-					if(err)
-					 {
-						 console.log("Problem with MySQL"+err);
-						 }
-					else 
-						 {
-						  console.log("Availability Table Updated!");
-						}           
-			  });
-			  
-			  // query for updating battery table
-			connection.query("UPDATE into battery SET type='"+v_type+
-					"', standbyTime ='"+v_standbyTime+
-					"', talkTime ='"+v_talkTime+
-					"' WHERE phoneId= " +v_phoneId ,function(err,rows){
-					
-					if(err)
-					 {
-						 console.log("Problem with MySQL"+err);
-						 }
-					else 
-						 {
-						  console.log("Battery Table Updated!");
-						}           
-			  });
-			  
-				// query for updating camera table
-			connection.query("UPDATE into camera SET features='"+v_features+
-					"', primary ='"+v_primary+
-					"' WHERE phoneId= " +v_phoneId ,function(err,rows){
-					
-					if(err)
-					 {
-						 console.log("Problem with MySQL"+err);
-						 }
-					else 
-						 {
-						  console.log("Camera Table Updated!");
-						}           
-			  });
-			  
-				  // query for updating connectivity table
-			connection.query("UPDATE into connectivity SET bluetooth='"+v_bluetooth+
-					"', cell ='"+v_cell+
-					"', gps ='"+v_gps+
-					"', infrared ='"+v_infrared+
-					"', wifi ='"+v_name+
-					"', snippet ='" +v_wifi+
-					"' WHERE phoneId= " +v_phoneId ,function(err,rows){
-					
-					if(err)
-					 {
-						 console.log("Problem with MySQL"+err);
-						 }
-					else 
-						 {
-						  console.log("Connectivity Table Updated!");
-						}           
-			  });
-			  
-				 // query for updating display table
-			connection.query("UPDATE into display SET screenResolution='"+v_screenResolution+
-					"', screenSize ='"+v_screenSize+
-					"', touchScreen ='"+v_touchScreen+
-					"' WHERE phoneId= " +v_phoneId ,function(err,rows){
-					
-					if(err)
-					 {
-						 console.log("Problem with MySQL"+err);
-						 }
-					else 
-						 {
-						  console.log("Display Table Updated!");
-						}           
-			  });
-			  
-				// query for updating hardware table
-			connection.query("UPDATE into hardware SET accelerometer='"+v_accelerometer+
-					"', audioJack ='"+v_audioJack+
-					"', cpu ='"+v_cpu+
-					"', fmRadio ='"+v_fmRadio+
-					"', physicalKeyboard ='"+v_physicalKeyboard+
-					"', usb ='" +v_usb+
-					"' WHERE phoneId= " +v_phoneId ,function(err,rows){
-					
-					if(err)
-					 {
-						 console.log("Problem with MySQL"+err);
-						 }
-					else 
-						 {
-						  console.log("Phones Table Updated!");
-						}           
-			  });
-			  
-			   // query for updating images table
-			connection.query("UPDATE into display SET images='"+v_images+
-					"' WHERE phoneId= " +v_phoneId ,function(err,rows){
-					
-					if(err)
-					 {
-						 console.log("Problem with MySQL"+err);
-						 }
-					else 
-						 {
-						  console.log("Images Table Updated!");
-						}           
-			  });
-			  
-				 // query for updating sizeAndWeight table
-			connection.query("UPDATE into sizeAndWeight SET dimensions='"+v_dimensions+
-					"', weight ='"+v_weight+
-					"' WHERE phoneId= " +v_phoneId ,function(err,rows){
-					
-					if(err)
-					 {
-						 console.log("Problem with MySQL"+err);
-						 }
-					else 
-						 {
-						  console.log("Size and Weight Table Updated!");
-						}           
-			  });
+  connection.query("UPDATE phones SET age='" + age+"', carrier='" +carrier+
+	  "', id='"+id+
+	  "', imageUrl='" +imageUrl+
+	  "', name='" +name+
+	  "', snippet='" +snippet+
+	  "', description='" +description+
+	  "', additionalFeatures='" +addFeatures+
+	  "'WHERE phoneId='"+phoneId +"'" , function(error,rows,fields){
+	
+    if(error)
+      {
+        console.log("Problem with MySQL"+error);
+      }
+      else
+        {
+          console.log("Phones Table Updated!");
+        }
+  });
+  
 
-				   // query for updating storage table
-			connection.query("UPDATE into storage SET ram='"+v_ram+
-					"', flash ='"+v_flash+
-					"' WHERE phoneId= " +v_phoneId ,function(err,rows){
-					
-					if(err)
-					 {
-						 console.log("Problem with MySQL"+err);
-						 }
-					else 
-						 {
-						  console.log("Storage Table Updated!");
-						}           
-			  });
+  //UPDATING AVAILABILITY TABLE  
+  var availability = req.body.availability;
+  
+   connection.query("UPDATE availability SET availability='" + availability+
+		"'WHERE phoneId='"+phoneId +"'" , function(error,rows,fields){
+	
+    if(error)
+      {
+        console.log("Problem with MySQL"+error);
+      }
+      else
+        {
+          console.log("Availability Table Updated!");
+        }
+  });
+  
+  //UPDATING BATTERY TABLE
+  var type = req.body.type;
+  var standbyTime = req.body.standbyTime;
+  var talkTime = req.body.talkTime;
+  
+    connection.query("UPDATE battery SET type='" + type+"', standbyTime='" +standbyTime+
+	  "', talkTime='"+talkTime+
+	  "'WHERE phoneId='"+phoneId +"'" , function(error,rows,fields){
+	
+    if(error)
+      {
+        console.log("Problem with MySQL"+error);
+      }
+      else
+        {
+          console.log("Battery Table Updated!");
+        }
+  });
+  
+  //UPDATING CAMERA TABLE
+  var primary = req.body.primary;
+  var features = req.body.features;
+ // var talkTime = req.body.talkTime;
+  
+    connection.query("UPDATE `camera` SET `primary`='" + primary+"', `features`='" +features+
+	
+	  "'WHERE phoneId='"+phoneId +"'" , function(error,rows,fields){
+	
+    if(error)
+      {
+        console.log("Problem with MySQL"+error);
+      }
+      else
+        {
+          console.log("Camera Table Updated!");
+        }
+  });
+  
+  
+  //UPDATING ANDROID TABLE
+  var os = req.body.os;
+  var ui = req.body.ui;
+  
+  connection.query("UPDATE android SET os='" + os+"', ui='" +ui+
+	  "'WHERE phoneId='"+phoneId +"'" , function(error,rows,fields){
+	
+    if(error)
+      {
+        console.log("Problem with MySQL"+error);
+      }
+      else
+        {
+          console.log("Android Table Updated!");
+        }
+  });
+   
+  
+  //UPDATING CONNECTIVITY TABLE
+  var bluetooth = req.body.bluetooth;
+  var cell = req.body.cell;
+  var gps = req.body.gps;
+  var infrared = req.body.infrared;
+  var wifi = req.body.wifi;
+  
+  connection.query("UPDATE connectivity SET bluetooth='" + bluetooth+
+	  "', cell='" +cell+
+	  "', gps='"+gps+
+	  "', infrared='" +infrared+
+	  "', wifi='" +wifi+
+	  "'WHERE phoneId='"+phoneId +"'" , function(error,rows,fields){
+	
+    if(error)
+      {
+        console.log("Problem with MySQL"+error);
+      }
+      else
+        {
+          console.log("Connectivity Table Updated!");
+        }
+  });
+  
+  //UPDATING DISPLAY TABLE
+  var screenResolution = req.body.screenResolution;
+  var screenSize = req.body.screenSize;
+  var touchScreen = req.body.touchScreen;
+    
+   connection.query("UPDATE display SET screenResolution='" + screenResolution+
+	  "', screenSize='" +screenSize+
+	  "', touchScreen='"+touchScreen+
+	  "'WHERE phoneId='"+phoneId +"'" , function(error,rows,fields){
+	
+    if(error)
+      {
+        console.log("Problem with MySQL"+error);
+      }
+      else
+        {
+          console.log("Display Table Updated!");
+        }
+  });
+  
+  //UPDATING HARDWARE TABLE
+  var accelerometer = req.body.accelerometer;
+  var audioJack = req.body.audioJack;
+  var cpu = req.body.cpu;
+  var fmRadio = req.body.fmRadio;
+  var physicalKeyboard = req.body.physicalKeyboard;
+  var usb = req.body.usb;
+  
+   connection.query("UPDATE hardware SET accelerometer='" +accelerometer+
+	  "', audioJack='" +audioJack+
+	  "', cpu='"+cpu+
+	  "', fmRadio='" +fmRadio+
+	  "', physicalKeyboard='" +physicalKeyboard+
+	  "', usb='" +usb+
+	  "'WHERE phoneId='"+phoneId +"'" , function(error,rows,fields){
+	
+    if(error)
+      {
+        console.log("Problem with MySQL"+error);
+      }
+      else
+        {
+          console.log("Hardware Table Updated!");
+        }
+  });
+  
+  //UPDATING SIZE & WEIGHT TABLE
+  var dimensions = req.body.dimensions;
+  var weight = req.body.weight;
+  
+  connection.query("UPDATE sizeAndWeight SET dimensions='" +dimensions+
+	  "', weight='" +weight+
+	  "'WHERE phoneId='"+phoneId +"'" , function(error,rows,fields){
+	
+    if(error)
+      {
+        console.log("Problem with MySQL"+error);
+      }
+      else
+        {
+          console.log("Size & Weight Table Updated!");
+        }
+  });
+  
+  //UPDATING STORAGE TABLE
+  var ram = req.body.ram;
+  var flash = req.body.flash;
+   
+  connection.query("UPDATE storage SET ram='" +ram+
+	  "', flash='" +flash+
+	  "'WHERE phoneId='"+phoneId +"'" , function(error,rows,fields){
+	
+    if(error)
+      {
+        console.log("Problem with MySQL"+error);
+      }
+      else
+        {
+          console.log("Storage Table Updated!");
+        }
+  });
+  
+  //UPDATING IMAGES TABLE
+  var images= req.body.images;
+  
+  connection.query("UPDATE images SET images='" +images+
+	  "'WHERE phoneId='"+phoneId +"'" , function(error,rows,fields){
+	
+    if(error)
+      {
+        console.log("Problem with MySQL"+error);
+      }
+      else
+        {
+          console.log("Images Table Updated!");
+        }
+  });
+});
 
-		});
+/*
+  // var cope = req.body.params;
+   var phone = JSON.parse(JSON.stringify(req.body));
+   var id = req.params.id;
+   
+   req.getConnection(function (err, connection) {
+        
+        var data = {
+            
+            age    : phone.age,
+            carrier : phone.carrier,
+            id   : phone.id,
+            imageUrl   : phone.imageUrl,
+			name   : phone.name,
+			snippet   : phone.snippet,
+			description   : phone.description,
+			additionalFeatures   : phone.additionalFeatures,
+        
+        };
+        
+        connection.query("UPDATE phones set ? WHERE phoneId = ? ",[data,id], function(err, rows)
+        {
+  
+          if (err)
+              console.log("Error Updating : %s ",err );
+         
+          res.redirect('/phoneboard');
+          
+        });
+    
+    });
+});
+*/
+
 
 
 /*

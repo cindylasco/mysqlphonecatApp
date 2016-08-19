@@ -21,6 +21,8 @@
 				<th>Availability</th>
 				<th>OS</th>
 				<th>UI</th>
+				<th>Features</th>
+				<th>Primary</th>
 				<th>Standby Time</th>
 				<th>Talk Time</th>
 				<th>Battery Type</th>
@@ -48,7 +50,7 @@
 			<tbody>
 			  <tr  ng-repeat="phone in phones">
 				<td>
-				<a href="/#/updatePhone/{{phone.id}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></button></a></td>
+				<a href="/#/updatePhone/{{phone.id}}" class="btn btn-success btn-sm" ><i class="glyphicon glyphicon-pencil"></i></button></a></td>
 				</td>
 				<td>{{phone.phoneId}}</td>
 				<td>{{phone.age}}</td>
@@ -61,9 +63,11 @@
 				<td>{{phone.availability}}</td>
 				<td>{{phone.os}}</td>
 				<td>{{phone.ui}}</td>
+				<td>{{phone.features}}</td>
+				<td>{{phone.primary}}</td>
 				<td>{{phone.standbyTime}}</td>
 				<td>{{phone.talkTime}}</td>
-				<td>{{phone.batteryType}}</td>
+				<td>{{phone.type}}</td>
 				<td>{{phone.bluetooth}}</td>
 				<td>{{phone.cell}}</td>
 				<td>{{phone.gps}}</td>
